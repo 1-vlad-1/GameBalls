@@ -35,14 +35,7 @@ public class Ball {
     }
 
     public boolean blowUp(){
-        int counter = numberOfOneColorNeighbours();
-        if (counter >=3){
 
-        }
         return false;
-    }
-
-    private int numberOfOneColorNeighbours(){
-        return 1;
     }
 }
