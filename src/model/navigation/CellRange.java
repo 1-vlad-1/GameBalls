@@ -30,3 +30,4 @@ public class CellRange {
         return min > 0 && max >= min;
     }
 }
+

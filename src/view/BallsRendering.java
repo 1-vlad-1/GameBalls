@@ -24,10 +24,6 @@ public class BallsRendering extends JFrame {
 
     private static final Color GRID_COLOR = Color.black;
 
-
-
-
-
     public BallsRendering(GameModel model) {
 
         _model = model;

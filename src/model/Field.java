@@ -1,6 +1,6 @@
 package model;
 
-import model.navigation.CellPosition;
+import model.navigation.*;
 
 import java.util.ArrayList;
 
@@ -8,8 +8,13 @@ public class Field {
 
     // ------------------------------ Размеры ---------------------------
 
-    public Field (){
-        setSize(10, 10);
+    private int _widht;
+
+    private int _height;
+    public Field (int width, int height){
+        setSize(width, height);
+        this._widht = width;
+        this._height = height;
     }
 
     public final void setSize(int width, int height) {
@@ -35,17 +40,5 @@ public class Field {
     public void addBall(CellPosition position, Ball ball){
         ball.setPosition(position);
         _balls.add(ball);
-    }
-
-    private void deleteBall(int x, int y) {
-        for (int i = _balls.size() - 1; i > -1; i--) {
-            double dx = _balls.get(i).getX() + (double)_balls.get(i).getWidth()/2 - x;
-            double dy = _balls.get(i).getY()  + (double)_balls.get(i).getWidth()/2 - y;
-            double d = Math.sqrt(dx * dx + dy * dy);
-            if (d < (double) _balls.get(i).getWidth()/2) {
-                _balls.remove(i);
-                break;
-            }
-        }
     }
 }

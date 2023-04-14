@@ -5,7 +5,7 @@ import model.navigation.CellPosition;
 
 public class GameModel {
 
-    Field _field = new Field();
+    Field _field = new Field(5,5);
 
     public Field getField(){
         return _field;
