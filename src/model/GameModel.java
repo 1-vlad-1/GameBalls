@@ -14,7 +14,6 @@ public class GameModel {
     public void start(){
         generateField();
 
-        // Вдруг игра завершилась, еще не начавшись
         identifyGameOver();
     }
 

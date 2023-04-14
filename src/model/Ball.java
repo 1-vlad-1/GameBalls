@@ -26,7 +26,7 @@ public class Ball {
         }
     }
 
-    public void setPosition(CellPosition position){
+    void setPosition(CellPosition position){
         _pos = position;
     }
 
