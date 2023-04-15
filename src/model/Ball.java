@@ -38,4 +38,9 @@ public class Ball {
 
         return false;
     }
+
+
+    public CellPosition shiftUp(){
+        return new CellPosition(_pos.getRow() + 1,_pos.getColumn() );
+    }
 }

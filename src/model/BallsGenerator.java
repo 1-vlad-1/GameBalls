@@ -18,14 +18,31 @@ public class BallsGenerator {
 
     private void createRowBalls(){
         for (int i = 0; i < _field.getWidth();i++){
-            Ball newBall = new Ball(Ball.COLORS.RED);
+            int colorNumber = (int) (Math.random() * 2);
+            Ball newBall;
+            if (colorNumber == 0){
+                newBall = new Ball(Ball.COLORS.RED);
+            } else if (colorNumber == 1) {
+                newBall = new Ball(Ball.COLORS.BLUE);
+            }else {
+                newBall = new Ball(Ball.COLORS.GREEN);
+            }
             _balls.add(newBall);
         }
     }
 
     private void placeBalls(){
+        for (int i = 0; i < _field.getWidth(); i++){
+            _field.getBalls().forEach((ball -> ball.setPosition(ball.shiftUp())));
+        }
         for (int i = 0; i < _balls.size();i++){
             _balls.get(i).setPosition(new CellPosition(1,i));
+        }
+    }
+
+    public void fillTheField(){
+        for (int i = 0; i < _field.getHeight()/2; i++){
+            placeNewRowBalls();
         }
     }
 }
