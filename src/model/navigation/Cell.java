@@ -1,10 +1,21 @@
 package model.navigation;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import model.Ball;
+
+import java.util.*;
 
 public class Cell {
+    // ----------------------- Шарик --------------------------
+    private Ball _ball;
+
+    public void setBall(Ball _ball) {
+        this._ball = _ball;
+    }
+
+    public Ball getBall() {
+        return _ball;
+    }
+
     // ----------------------- Позиция --------------------------
 
     private final CellPosition _pos;
@@ -45,5 +56,10 @@ public class Cell {
 
     public boolean isNeighbor(Cell other) {
         return _neighbors.containsValue(other);
+    }
+
+    public List<Cell> parser(Map<Direction, Cell> map){
+        List<Cell> neighbours = new ArrayList<>(this.neighbors().values());
+        return neighbours;
     }
 }
