@@ -1,14 +1,23 @@
 package model;
 
+import model.navigation.Cell;
 import model.navigation.CellPosition;
 
 
 import javax.swing.*;
+import java.lang.reflect.Array;
 import java.security.InvalidParameterException;
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Ball {
 
+    private Cell _cell;
+
+    public void setCell(Cell cell){
+        _cell = cell;
+    }
     private CellPosition _pos;
 
     private final Color _color;
@@ -35,12 +44,15 @@ public class Ball {
     }
 
     public boolean blowUp(){
-
+        ArrayList<Ball> explodedBalls = new ArrayList<Ball>();
+        //!!!
+        //_cell.neighbors().forEach();
         return false;
     }
 
 
-    public CellPosition shiftUp(){
+    public CellPosition shiftUpPos(){
+        ///сигнал конца игры
         return new CellPosition(_pos.getRow() + 1,_pos.getColumn() );
     }
 }
